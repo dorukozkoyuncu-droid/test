@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Sözlük</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar__container">
+      <a href="/" id="navbar__logo">SÖZLÜK</a>
+
+      <!-- Hamburger icon -->
+      <div class="navbar__toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
+      <!-- Menu links -->
+      <ul class="navbar__menu">
+        <li class="navbar__item">
+          <a href="/index.html" class="navbar__links">Ana Sayfa</a>
+        </li>
+        <li class="navbar__item">
+          <a href="/tech.html" class="navbar__links">Deyimler</a>
+        </li>
+        <li class="navbar__item">
+          <a href="/index.html" class="navbar__links">/</a>
+        </li>
+        <li class="navbar__btn">
+          <a href="/tech2.html" class="button">Kaynakça</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+  <!-- Hero -->
+  <div class="main">
+    <div class="main__container">
+      <div class="main__content">
+        <h1>VİDEOLU ATASÖZLERİ</h1>
+        <h2>DEYİMLER SÖZLÜĞÜ</h2>
+        <p>Atasözleri ve deyimleri</p>
+        <t>videolar ile</t>
+        <button class="main__btn"><a href="tech.html">Öğrenmeye Başlayın</a></button>
+      </div>
+      <div class="main__img--container">
+        <img src="images/pic1.svg" alt="pic1.svg" id="main__img">
+      </div>
+    </div>
+  </div>
+
+  <!-- JS for Hamburger Toggle -->
+  <script>
+    const menu = document.querySelector('.navbar__menu');
+    const menuBtn = document.querySelector('#mobile-menu');
+    const bars = document.querySelectorAll('#mobile-menu .bar');
+
+    menuBtn.addEventListener('click', () => {
+      // Toggle active class for menu
+      menu.classList.toggle('active');
+
+      // Animate hamburger into X
+      bars.forEach((bar, index) => {
+        if (menu.classList.contains('active')) {
+          if (index === 0) bar.style.transform = 'rotate(45deg) translate(5px, 5px)';
+          if (index === 1) bar.style.opacity = '0';
+          if (index === 2) bar.style.transform = 'rotate(-45deg) translate(5px, -5px)';
+        } else {
+          bar.style.transform = 'none';
+          bar.style.opacity = '1';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
+
